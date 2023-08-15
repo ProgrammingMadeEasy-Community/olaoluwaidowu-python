@@ -1,7 +1,7 @@
 """
     Author: Olaoluwa Idowu
     Date: 15-08-23
-    Title: PME task2
+    Title: PME-DaysOfTheWeek task2
 """
 
 
