@@ -23,7 +23,16 @@ def execute(operation,x,y):    # function to execute operation
 
 def get_number(position, repeat=True):     # function to request for user's input
     
+    count = 0
     while repeat:
+
+        # track and return trials exceeded after 5 times
+        count += 1
+        if count == 6:
+            print("\n5 Trials Exceeded!!! Program Ended\n\n.... Try again later and enter a number\n")
+            return "Trials Exceeded"
+        
+        # ask user for number
         number = input("Enter the {}: ".format(position))
 
         try:
@@ -54,9 +63,20 @@ def get_operation():  # function to request operation type from user
 
 def main():
 
-    # get numbers into variables
+    # get first number into variable
     first_number = get_number("first number")
+
+    # end after trials exceeded for first number
+    if first_number == "Trials Exceeded":
+        return None
+    
+    # get second number into variable
     second_number = get_number("second number")
+
+     # end after trials exceeded for second number
+    if second_number == "Trials Exceeded":
+        return None
+
 
     # get operation number and operation symbol
     operation, symbol = get_operation()
